@@ -46,6 +46,7 @@ export default {
           checkUser(this.form).then(res => {
             // 如果成功跳转至首页
             if (res.meta.status === 200) {
+              localStorage.setItem('myToken', res.data.token)
               this.$router.push({name: 'Home'})
             } else {
             // 如果失败提示错误信息
